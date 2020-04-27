@@ -1,0 +1,94 @@
+<style>
+    img {
+        max-width: 99%;
+        max-height: 99%;    
+    }
+</style>
+
+<h2>jQuery effects</h2>
+
+
+
+<p>The jQuery library provides several techniques for adding animation to a web page. These include simple, standard animations that are frequently used, and the ability to craft sophisticated custom effects.</p>
+
+
+<h2>Hide</h2>
+
+<p>We can easily hide any element on our page:</p>
+
+
+<pre><code>
+    $("#panel1").hide()
+</code></pre>
+
+<p>What happens here - our code loads up the page and then it hides panel one. </p>
+
+
+<h2>Animation time</h2>
+
+<p>In order to notice it, let's add argument to our hide() function, let's pass <i>500</i> and see what will happen</p>
+
+<pre><code>
+    $("#panel1").hide(500);
+</code></pre>
+
+<p>That's easy, isn't it? </p>
+
+
+<h2>Chaining </h2>
+
+
+<p>jQuery is chainable, this is awesome feature. That means that we call multiple functions on 1 selector. Like this:</p>
+
+<pre><code>
+    $("#panel1").hide(500).show(1000).hide(500).show(1000);
+</code></pre>
+
+
+<p>You can keep chaining it as long as it's not semicolon yet.</p>
+
+
+<h2>Fade</h2>
+
+<p>Another available animation is fadeIn and fadeOut</p>
+
+
+<pre><code>
+    $("#panel1").fadeIn(200)0.fadeOut(2000);
+</code></pre>
+
+<p>This allows us to simulate blinking:</p>
+
+
+<pre><code>
+    $("#panel1").fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200);
+</code></pre>
+
+<h2>Slide</h2>
+
+<p>We can also slide our content up and down:</p>
+
+
+<pre><code>
+    $("#panel1").slideUp(500).slideDown(500).slideUp(500).slideDown(500);
+</code></pre>
+
+
+<p> Most of the animation can simply toggled, so we don't have to know the current state of it:</p>
+
+<pre><code>
+    $("#panel1").slideUp(500).slideToggle(500).slideToggle(500).slideDown(500);
+</code></pre>
+
+
+<h2>Delays</h2>
+
+
+<p>We can also add some delays to our effects:</p>
+
+<pre><code>
+    $("#panel1").slideToggle(500).delay(1000).slideToggle(500);
+</code></pre>
+
+
+

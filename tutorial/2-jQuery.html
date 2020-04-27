@@ -1,0 +1,172 @@
+<style>
+    img {
+        max-width: 99%;
+        max-height: 99%;    
+    }
+</style>
+
+
+<h1>What is jQuery?</h1>
+
+The next step for oyu gonna be learn jQuery.
+
+jQuery is the easiset and most popular Javascript library. 
+So if you wanna start learning we development learn jQuery.
+Every employer I ever worked used jQuery no matter how big or small they were. 
+
+
+<h2>Basics</h2>
+
+
+<h2>jQuery features</h2>
+
+<ul> 
+  <li>Easy to manipulate DOM</li>
+  <li>Massive community</li>
+  <li>Widely used </li>
+  <li>Cross-browser support</li>
+  <li>Chainable</li>
+</ul>
+
+<p>Why should you use it?</p>
+
+
+<ul>
+  <li>Simplified JavaScript </li>
+  <li>EventHandling</li>
+  <li>Lightweight</li>
+  <li>Animations</li>
+</ul>
+
+
+
+ 
+
+ 
+
+
+<h2>DOM</h2>
+
+<p>The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects. That way, programming languages can connect to the page.
+</p>
+
+<img src="" alt="">
+
+
+
+<h2>Installation</h2>
+
+<p>You can either download it and link as external link or use CDN.</p>
+
+
+<p>We will use MDB starter to get a better look for our website.
+
+</p>
+
+
+
+<p>Paste the following starting code and save as index.html on your computer:</p>
+
+
+<pre>
+  <code>
+    &lt;!DOCTYPE html&gt;&#13;&#10;    &lt;html&gt;&#13;&#10;    &#13;&#10;    &lt;head&gt;&#13;&#10;        &lt;title&gt;MDB Live&lt;/title&gt;&#13;&#10;        &lt;!-- Font Awesome --&gt;&#13;&#10;        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://use.fontawesome.com/releases/v5.8.2/css/all.css&quot;&gt;&#13;&#10;        &lt;!-- Google Fonts --&gt;&#13;&#10;        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap&quot;&gt;&#13;&#10;        &lt;!-- Bootstrap core CSS --&gt;&#13;&#10;        &lt;link href=&quot;https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;&#13;&#10;        &lt;!-- Material Design Bootstrap --&gt;&#13;&#10;        &lt;link href=&quot;https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/css/mdb.min.css&quot; rel=&quot;stylesheet&quot;&gt;&#13;&#10;    &lt;/head&gt;&#13;&#10;    &#13;&#10;    &lt;body&gt;&#13;&#10;    &#13;&#10;        &lt;div class=&quot;container&quot;&gt;&#13;&#10;            &lt;div class=&quot;row&quot;&gt;&#13;&#10;                &lt;div class=&quot;col-12&quot;&gt;&#13;&#10;                    &lt;button id=&quot;btn1&quot; type=&quot;button&quot; class=&quot;btn btn-outline-primary waves-effect&quot;&gt;#btn1&lt;/button&gt;&#13;&#10;                    &lt;button id=&quot;btn2&quot; type=&quot;button&quot; class=&quot;btn btn-outline-default waves-effect&quot;&gt;#btn2&lt;/button&gt;&#13;&#10;                    &lt;button id=&quot;btn3&quot; type=&quot;button&quot; class=&quot;btn btn-outline-secondary waves-effect&quot;&gt;#btn3&lt;/button&gt;&#13;&#10;                    &lt;button id=&quot;btn4&quot; type=&quot;button&quot; class=&quot;btn btn-outline-success waves-effect&quot;&gt;btn4&lt;/button&gt;&#13;&#10;                &lt;/div&gt;&#13;&#10;            &lt;/div&gt;&#13;&#10;            &lt;div class=&quot;row mt-5&quot;&gt;&#13;&#10;                &lt;div class=&quot;col-md-3&quot;&gt;&#13;&#10;                    &lt;div id=&quot;panel1&quot; class=&quot;card&quot;&gt;&#13;&#10;                        &lt;div class=&quot;card-body&quot;&gt;&#13;&#10;                            &lt;h5 class=&quot;card-title&quot;&gt;#panel1&lt;/h5&gt;&#13;&#10;                            &lt;p class=&quot;card-text&quot;&gt;Some quick example text to build on the panel title and make up the bulk of&#13;&#10;                                the panel&apos;s content.&lt;/p&gt;&#13;&#10;                        &lt;/div&gt;&#13;&#10;                    &lt;/div&gt;&#13;&#10;                &lt;/div&gt;&#13;&#10;                &lt;div class=&quot;col-md-3&quot;&gt;&#13;&#10;                    &lt;div id=&quot;panel2&quot; class=&quot;card&quot;&gt;&#13;&#10;                        &lt;div class=&quot;card-body&quot;&gt;&#13;&#10;                            &lt;h5 class=&quot;card-title&quot;&gt;#panel2&lt;/h5&gt;&#13;&#10;                            &lt;p class=&quot;card-text&quot;&gt;Some quick example text to build on the panel title and make up the bulk of&#13;&#10;                                the panel&apos;s content.&lt;/p&gt;&#13;&#10;                        &lt;/div&gt;&#13;&#10;                    &lt;/div&gt;&#13;&#10;                &lt;/div&gt;&#13;&#10;                &lt;div class=&quot;col-md-3&quot;&gt;&#13;&#10;                    &lt;div id=&quot;panel1&quot; class=&quot;card&quot;&gt;&#13;&#10;                        &lt;div class=&quot;card-body&quot;&gt;&#13;&#10;                            &lt;h5 class=&quot;card-title&quot;&gt;#panel3&lt;/h5&gt;&#13;&#10;                            &lt;p class=&quot;card-text&quot;&gt;Some quick example text to build on the panel title and make up the bulk of&#13;&#10;                                the panel&apos;s content.&lt;/p&gt;&#13;&#10;                        &lt;/div&gt;&#13;&#10;                    &lt;/div&gt;&#13;&#10;                &lt;/div&gt;&#13;&#10;                &lt;div class=&quot;col-md-3&quot;&gt;&#13;&#10;                    &lt;div id=&quot;panel1&quot; class=&quot;card&quot;&gt;&#13;&#10;                        &lt;div class=&quot;card-body&quot;&gt;&#13;&#10;                            &lt;h5 class=&quot;card-title&quot;&gt;#panel4&lt;/h5&gt;&#13;&#10;                            &lt;p class=&quot;card-text&quot;&gt;Some quick example text to build on the panel title and make up the bulk of&#13;&#10;                                the panel&apos;s content.&lt;/p&gt;&#13;&#10;                        &lt;/div&gt;&#13;&#10;                    &lt;/div&gt;&#13;&#10;                &lt;/div&gt;&#13;&#10;            &lt;/div&gt;&#13;&#10;        &lt;/div&gt;&#13;&#10;        &lt;/div&gt;&#13;&#10;    &#13;&#10;    &#13;&#10;    &#13;&#10;        &lt;!-- JQuery --&gt;&#13;&#10;        &lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js&quot;&gt;&lt;/script&gt;&#13;&#10;        &lt;!-- Bootstrap tooltips --&gt;&#13;&#10;        &lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js&quot;&gt;&#13;&#10;        &lt;/script&gt;&#13;&#10;        &lt;!-- Bootstrap core JavaScript --&gt;&#13;&#10;        &lt;script type=&quot;text/javascript&quot;&#13;&#10;            src=&quot;https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;&#13;&#10;        &lt;!-- MDB core JavaScript --&gt;&#13;&#10;        &lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js&quot;&gt;&#13;&#10;        &lt;/script&gt;&#13;&#10;    &#13;&#10;        &lt;script&gt;&#13;&#10;    &#13;&#10;    &#13;&#10;        &lt;/script&gt;&#13;&#10;    &#13;&#10;    &lt;/body&gt;&#13;&#10;    &#13;&#10;    &lt;/html&gt;
+  </code>
+</pre>
+
+
+<h2>Agenda:</h2>
+
+
+<p>In next lessons we will learn </p>
+
+
+
+<ul>
+  <li>jQuery Methods</li>
+  <li>jQuery Effects </li>
+  <li>jQuery EVents</li>
+</ul>
+
+<p>Let's start with <a href="3-jQuery-methods.html"> jQuery methods.</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Notes: 
+
+
+
+ ul li a 
+
+$(selector).css(propertyname, value);
+
+li:first 
+
+
+CSS
+value 
+html 
+text 
+
+jQery Effects 
+
+
+
+
+jQuery EVents
+
+click vs on click on (event function)\
+keypress (function) 
+
+
+
+
+parenties 
+curly braces 
+
+now when I confused you from the start
+
+
+
+hide ( 3000 ) . chaining  
+
+css({color: 'red', fontWeight: 'bold'})
+
+You cant do font-weight bo to odejmowanie , mozesz "font-weight":"bold" 
+
+
+
+If I've done to much too fast 
+
+
+
+<a href=""></a>
+
+
+
+
+
+
+
+
+
+
+
+short way 
+
+$ = $(document).ready(function() { 
+
+
+
+})

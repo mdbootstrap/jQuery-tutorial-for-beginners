@@ -1,0 +1,227 @@
+<style>
+    img {
+        max-width: 99%;
+        max-height: 99%;    
+    }
+</style>
+
+<h1>jquery Methods</h1>
+
+
+ 
+ 
+
+
+
+
+
+<h2>document.ready()</h2>
+
+<p>A page can't be manipulated safely until the document is "ready." jQuery detects this state of readiness for you. Code included inside $( document ).ready() will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute.</p>
+
+
+<p>Code included inside</p>
+
+<pre><code>
+    $( document ).ready(function() { ... })
+</code></pre>
+ 
+<p>will run once the entire page (images or iframes), not just the DOM, is ready.</p>
+
+<p>So what document.ready does is saying - hey wait for my whole document to load up before I will try running any JavaScript
+    otherwise you will end up talking js to panel 1 but panel 1 is not there yet.</p>
+
+<pre><code>
+    // A $( document ).ready() block.
+    $( document ).ready(function() {
+        console.log( "ready!" );
+    })    
+</code></pre>
+ 
+
+<p>The shorter version:</p>
+
+
+<pre><code>
+    // Shorthand for $( document ).ready()
+    $(function() {
+        console.log( "ready!" );
+    });
+</code></pre>
+
+
+
+
+MIST 
+<h2>Passing named function</h2>
+
+<pre><code>
+    function readyFn( jQuery ) {
+        // Code to run when the document is ready.
+    }
+     
+    $( document ).ready( readyFn );
+</code></pre>
+
+
+
+<h2>Vanilla JS VS jQuery </h2>
+
+
+<p>If you wonder what VanillaJS is let me quickly explain it to you showing a code of VanillaJS library:</p>
+
+<p>This is VanillaJS (unmodified):</p>
+<pre><code>
+    // VanillaJS v1.0
+    // Released into the Public Domain
+    // Your code goes here: 
+</code></pre>
+
+<p>As you can see, it's not really a framework or a library. It's just a running gag for framework-loving bosses or people who think you NEED to use a JS framework.</p>
+
+<p>Using "VanillaJS" means using plain JavaScript without any additional libraries like jQuery.</p>
+
+<p>In the previous webinar we were using JavaScript to manipulate HTML elements, i.e. to edit it's text we used:</p>
+
+<pre><code>
+    let p = document.getElementById('panel1');
+</code></pre>
+
+<p>jQuery makes it much easier</p>
+
+<pre><code>
+$("#panel1")
+</code></pre>
+
+<p>and instead of long pure JS setting: </p>
+
+<pre><code>
+    document.getElementById('panel1').innerText = "Some text";
+</code></pre>
+
+<p>much shorter version:</p>
+
+
+<pre><code>
+    $("#panel1").text("Some text");
+</code></pre>
+
+<h2>Syntax</h2>
+
+$(selector).action()
+
+<p>As you can see , a syntax is much easier and shorter than VanillaJS.</p>
+
+
+<h2>Syntax</h2>
+
+<ol>
+    <ul>$ - selects and acces a query </ul>
+    <ul>selector - denotes the html element that needs to be manipulated</ul>
+    <ul>aciont () - denotes a jQuery action to be performed on the html element     </ul>
+</ol>
+
+
+
+
+<p>Of course you can do the same things which you've been doing with pure JS, like replace entire HTML</p>
+
+
+<pre>
+    <code>
+        $("#panel1").html("<h1>Head</h1><p>Paragraph</p>")
+
+    </code>
+</pre>
+
+<p>And use same selectors:</p>
+
+<pre><code>
+    $("#lastname")	    //The element with id="lastname"
+    $(".intro")	        //All elements with class="intro"
+    $(".intro,.demo")	//All elements with the class "intro" or "demo"
+    $("p")	            //All <p> elements
+    $("p:first")	    //The first <p> element
+    $("p:last")	        //The last <p> element
+    $("div > p")	    //All <p> elements that are a direct child of a <div> element
+    $("div p")	        //All <p> elements that are descendants of a <div> element
+</code></pre>
+
+<p>What else we can do?</p>
+
+
+<h2>Add / remove / class </h2>
+
+<pre><code>
+    $("#panel1").addClass("some-class")
+    $("#panel1").removeClass("other-class")
+    $("#panel1").toggleClass("toggle-class")
+
+</code></pre>
+
+<h2>Check if element has given class:</h2>
+
+<pre><code>
+    console.log($("#panel1").hasClass("some-class"));
+</code></pre>
+
+<h2>Add styles</h2>
+
+<pre><code>
+    $("#panel1").css({color:'red'})
+</code></pre>
+
+<p>One think we can't do this way is use dash:</p>
+
+<pre><code>
+    $("#panel1").css({margin-top:'20px'})
+</code></pre>
+
+<p>In Javascript dash means minus so this will throw an error. But we use either:</p>
+
+
+<pre><code>
+    $("#panel1").css({marginTop:'20px'})
+</code></pre>
+
+<p>jQuery will understand that. Or wrap it with quotes if you want to do it that way</p>
+<pre><code>
+    $("#panel1").css({'margin-top':'20px'})
+
+</code></pre>
+
+<p>In general you css syntax looks like:</p>
+
+<pre><code>
+    $(selector).css(propertyname, value);
+</code></pre>
+
+<p>You can pass more styles:</p>
+
+<pre><code>
+    $("#panel1").css({
+        marginTop:'20px',
+        color: 'red',
+        backgroundColor: 'black'
+    })
+
+</code></pre>
+
+<p>And even use variables </p>
+
+<pre><code>
+    let design = {
+        marginTop:'20px',
+        color: 'red',
+        backgroundColor: 'black'
+    }
+    
+    $("#panel1").css(design)
+
+</code></pre>
+
+<p>Let's move to <a href="4-jQuery-effects.html">jQuery effects</a></p>
+
+
+
+

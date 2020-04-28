@@ -10,8 +10,156 @@
 
 <p>As you may remember from previous tutorials, we can listen on different events using JavaScript.</p>
 
+<pre><code>
+    document.getElementById('btn1').addEventListener('click', myFunction);
+</code></pre>
 
 <p>Obviously jQuery also allows us to do it and makes it easier.</p>
 
+<pre><code>
+    $('#btn1').on('click' , myFunction);
+</code></pre>
 
-<p>TBC....</p>
+
+<p>Which allows us to easily manipulate our DOM using events:</p>
+
+<pre><code>
+    $('#btn1').on('click', myFunction);
+
+    function myFunction() {
+        $("#panel1").slideToggle(500);
+    }
+</code></pre>
+
+
+<p>We can also use nameless functions:</p>
+
+<pre><code>
+    $('#btn1').on('click', function(){
+        $("#panel1").slideToggle(500);
+    });
+</code></pre>
+
+
+<p>We can use other events, like 'mouseover'</p>
+
+
+<pre><code>
+    $('#btn1').on('mouseover', function(){
+        $("#panel1").slideToggle(500);
+    });
+</code></pre>
+
+<p>This way you can create your accordion component yourself</p>
+
+
+<pre><code>
+    $('#btn1').on('click', function(){
+        $("#panel1").slideToggle(500);
+    });
+    $('#btn2').on('click', function(){
+        $("#panel2").slideToggle(500);
+    });
+    $('#btn3').on('click', function(){
+        $("#panel3").slideToggle(500);
+    });
+    $('#btn4').on('click', function(){
+        $("#panel4").slideToggle(500);
+    });
+
+</code></pre>
+
+
+<p>However this is not the most efficient way.</p>
+
+<p>Whenever you are coding something, you should keep in mind one important rule, we call it DRY - Don't Repeat Yourself  </p>
+
+
+<p>So let's try to DRY our code using jQuery, we will try to listen to all clicks at once, and target panels dynamically.</p>
+
+
+<p>As you may know in HTML we can define our own attributes using <i>data-*</i> and put our own property name in place of * i.e. data-panel</p>
+
+<p>Let's add it to our #btn1 :</p>
+
+
+<pre><code>
+
+    &lt;button id=&quot;btn1&quot; data-panel=&quot;panel1&quot; type=&quot;button&quot; class=&quot;btn btn-outline-primary waves-effect&quot;&gt;#btn1&lt;/button&gt;&#13;&#10;
+</code></pre>
+
+<p>Thanks to that we can easily find our button using the following selector: </p>
+
+
+<pre><code>
+    $('button[data-panel=panel1]')
+</code></pre>
+
+<p>Keep in mind that you can choose any attribute as a selector , i.e. class or id:</p>
+
+
+<pre><code>
+    $('button[id=btn1]')
+</code></pre>
+
+
+<p>Let's add data-panel to all our buttons:</p>
+
+<pre><code>
+    &lt;button id=&quot;btn1&quot; data-panel=&quot;panel1&quot; type=&quot;button&quot; class=&quot;btn btn-outline-primary waves-effect&quot;&gt;#btn1&lt;/button&gt;&#13;&#10;    &lt;button id=&quot;btn2&quot; data-panel=&quot;panel2&quot; type=&quot;button&quot; class=&quot;btn btn-outline-default waves-effect&quot;&gt;#btn2&lt;/button&gt;&#13;&#10;    &lt;button id=&quot;btn3&quot; data-panel=&quot;panel3&quot; type=&quot;button&quot; class=&quot;btn btn-outline-secondary waves-effect&quot;&gt;#btn3&lt;/button&gt;&#13;&#10;    &lt;button id=&quot;btn4&quot; data-panel=&quot;panel4&quot; type=&quot;button&quot; class=&quot;btn btn-outline-success waves-effect&quot;&gt;btn4&lt;/button&gt;
+</code></pre>
+
+<p>Let's remove our copy paste code and change it with single selector which will listen to all buttons:</p>
+
+<pre><code>
+    $('button').on('click', function(){
+        $("#panel1").slideToggle(500);
+    });
+
+</code></pre>
+
+<p><i>Note:</i> If we had more buttons on the page and want to target only these 4, we could target it using some class which is utilized only  by these 4 buttons, or use some surrounding div and target them as children of this particular div.  </p>
+
+
+<p>Now when I click on any button, it will toggle panel one, let's fix that.</p>
+
+
+<p>Now what we wanna do is to access id of the panel assigned to given button in data-panel attribute. </p>
+
+
+<p>Let's check the following code:</p>
+
+
+<pre><code>
+    $('button').on('click', function(){
+        let panelId = $(this);
+        console.log(panelId);
+    });  
+</code></pre>
+
+
+<p>This way we can catch event and related which button was clicked:</p>
+
+<img src="assets/button_this.png" alt="">
+
+<p>Now we can easily find attribute value:</p>
+
+<pre><code>
+    $('button').on('click', function(){
+        let panelId = $(this).attr('data-panel');
+        console.log(panelId);
+    });
+</code></pre>
+
+
+<p>Now since we have our target panel id, we can toggle particular panel:</p>
+
+<pre><code>
+    $('button').on('click', function(){
+        let panelId = $(this).attr('data-panel');
+        $('#'+panelId).slideToggle(500);
+    });
+</code></pre>
+
+
+

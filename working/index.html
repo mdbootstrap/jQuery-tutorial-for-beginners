@@ -18,10 +18,10 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <button id="btn1" type="button" class="btn btn-outline-primary waves-effect">#btn1</button>
-                <button id="btn2" type="button" class="btn btn-outline-default waves-effect">#btn2</button>
-                <button id="btn3" type="button" class="btn btn-outline-secondary waves-effect">#btn3</button>
-                <button id="btn4" type="button" class="btn btn-outline-success waves-effect">btn4</button>
+                <button id="btn1" data-panel="panel1" type="button" class="btn btn-outline-primary waves-effect">#btn1</button>
+                <button id="btn2" data-panel="panel2" type="button" class="btn btn-outline-default waves-effect">#btn2</button>
+                <button id="btn3" data-panel="panel3" type="button" class="btn btn-outline-secondary waves-effect">#btn3</button>
+                <button id="btn4" data-panel="panel4" type="button" class="btn btn-outline-success waves-effect">btn4</button>
             </div>
         </div>
         <div class="row mt-5">
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div id="panel1" class="card">
+                <div id="panel3" class="card">
                     <div class="card-body">
                         <h5 class="card-title">#panel3</h5>
                         <p class="card-text">Some quick example text to build on the panel title and make up the bulk of
@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div id="panel1" class="card">
+                <div id="panel4" class="card">
                     <div class="card-body">
                         <h5 class="card-title">#panel4</h5>
                         <p class="card-text">Some quick example text to build on the panel title and make up the bulk of
@@ -80,15 +80,18 @@
     </script>
 
     <script>
+        // A $( document ).ready() block.
+        $(document).ready(function () {
 
-    // A $( document ).ready() block.
-$( document ).ready(function() {
+
+            $('button').on('click', function(){
+                let panelId = $(this).attr('data-panel');
+                $('#'+panelId).slideToggle(500);
+            });
 
 
-    $("#panel1").slideToggle(500).delay(1000).slideToggle(500);
 
-})
-
+        })
     </script>
 
 </body>

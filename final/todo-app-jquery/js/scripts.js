@@ -35,7 +35,7 @@ $(function () {
     // });
     //  ======================JQ=========================
     //  jQuery way:
-    $('#list').on('click', function (event) {
+    $('#list').on('click', function () {
         var target = $(event.target);
         target.toggleClass('done');
     })
